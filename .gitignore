@@ -1,3 +1,14 @@
+.project
+.pydevproject
+*.pyc
+
+build/
+chisel.egg-info/
+dist/
+
 dev-data/
 dev-ipynbs/
 pytm201604_db/
+.ipynb_checkpoints/
+data/*.txt
+
