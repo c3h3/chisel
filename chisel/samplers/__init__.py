@@ -15,9 +15,13 @@ def ngram(text, n, with_complete_tail=True, empty_word=u"\u0000"):
             yield list(text[k:k + n])
             
     else:
-        n_nones = n - len(text)
-        for i in range(len(text)):
+        if with_complete_tail:
+            n_nones = n - len(text)
+            for i in range(len(text)):
+                yield list(text[i:]) + [empty_word for j in range(n_nones+i)]
+        else:
+            i = 0
+            n_nones = n - len(text)
             yield list(text[i:]) + [empty_word for j in range(n_nones+i)]
-        
         
         
